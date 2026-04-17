@@ -20,7 +20,7 @@ setopt CORRECT
 update-system() {
   sudo timeshift --create --comments "Before update" &&
   yay -Syu &&
-  pacman -Q > ~/.dotfiles/packages.txt &&
+  pacman -Qq > ~/.dotfiles/packages.txt &&
 }
 
 # Created by `pipx` on 2026-02-07 02:01:55
