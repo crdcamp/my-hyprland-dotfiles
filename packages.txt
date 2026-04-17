@@ -120,6 +120,7 @@ gperftools
 gpgme
 gpgmepp
 gpsd
+granite7
 graphene
 graphite
 grep
@@ -137,6 +138,7 @@ gtk-layer-shell
 gtk-update-icon-cache
 gtk3
 gtk4
+gtk4-layer-shell
 gtkmm3
 guile
 gupnp
@@ -555,6 +557,7 @@ startup-notification
 stow
 sudo
 svt-av1
+swaync
 system-config-printer
 systemd
 systemd-libs
@@ -562,6 +565,7 @@ systemd-sysvcompat
 tar
 texinfo
 timeshift
+timeshift-systemd-timer
 tinysparql
 tomlplusplus
 totem-pl-parser

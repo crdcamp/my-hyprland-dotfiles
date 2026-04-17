@@ -3,7 +3,7 @@
 # Ensure we're in the home folder
 cd ~/
 
-# Configure system clock to sync with network's
+# Sync system clock with network
 
 # Install git
 sudo pacman -S git
@@ -14,7 +14,7 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
-# Homefolder... again (you never know)
+# Return to home folder
 cd ~/
 
 # Create quick access folders for Nautilus
@@ -32,6 +32,7 @@ rm -rf ~/.config
 # Clone Hyprland configuration files and copy them (we'll stick with manual deletion for now)
 git clone https://github.com/crdcamp/my-hyprland-dotfiles.git
 mkdir .dotfiles
+# We'll change this to the `mv` command later
 cp -r ~/my-hyprland-dotfiles ~/.dotfiles
 
 # GNU Stow
@@ -61,9 +62,14 @@ EOF
 # Configure Nautilus to use Zed Editor
 xdg-mime default dev.zed.Zed.desktop text/plain
 
-# Setup timeshift
+# Setup brave for xdg-mime
+xdg-mime default brave-browser.desktop x-scheme-handler/http
+xdg-mime default brave-browser.desktop x-scheme-handler/https
+
+# Setup timeshift\
+sudo systemctl daemon-reload
+sudo systemctl enable timeshift-hourly.timer
 
 # Configure GTK dark theme for root apps
-
 
 echo "Installation complete. Please restart your device."
