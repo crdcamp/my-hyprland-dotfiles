@@ -72,8 +72,8 @@ sudo systemctl enable timeshift-hourly.timer
 
 # NEED TO TEST THIS. GETTING A BIT RISKY WITH THESE COMMANDS
 root_uuid=$(findmnt -n -o UUID /)
-
-sudo tee /etc/timeshift/timeshift.json > /dev/null << EOF
+sudo mkdir -p /etc/timeshift
+sudo tee /etc/timeshift/timeshift.json << EOF
 {
     "backup_device_uuid" : "$root_uuid",
     "do_first_run" : "false",
@@ -90,4 +90,4 @@ EOF
 
 # Configure GTK dark theme for root apps
 
-echo "Installation complete. Please reboot your device"
+echo "Installation complete. Welcome to Aptus. Please reboot your device before continuing"

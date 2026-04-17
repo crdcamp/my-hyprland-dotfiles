@@ -58,7 +58,6 @@
   },
   "auto_install_extensions": {
     "codebook": true,
-    "markdown-oxide": true,
     "make": true,
     "html": true,
     "toml": true,
