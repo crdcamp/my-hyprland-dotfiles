@@ -10,7 +10,7 @@ I'm about 65% of the way done with these configuration files. The remaining requ
 * Finish up [Waybar](https://github.com/alexays/waybar) (mostly complete - just needs a little love)
 * Configure [swaync](https://github.com/ErikReider/SwayNotificationCenter) notification daemon
 
-I honestly wouldn't recommend anyone to use Hyprland configuration files from others (or Hyprland in general), but you're welcome to try these out.
+I'll also add a boot screen with a logo when these are done, but above are the final requirements for this system to be fully functional.
 
 # A couple warnings before installing
 * This install script assumes you have **absolutely nothing** on your computer. It **will** delete your .config folder and has absolutely no error handling.
@@ -27,5 +27,10 @@ cd ~/my-hyprland-dotfiles/
 chmod +x install.sh
 ./install.sh
 ```
+
+# Post-Install
+
+* Configure [Git](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
+* Set up [SSH for GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
 
 That's it! Welcome to Aptus.
