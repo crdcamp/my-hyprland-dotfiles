@@ -18,7 +18,7 @@ setopt CORRECT
 
 # Aliases
 update-system() {
-  sudo timeshift --create --comments "Before update" &&
+  sudo timeshift --create --comments "Before system update" &&
   yay -Syu &&
   pacman -Qq > ~/.dotfiles/packages.txt && echo "Update complete. Your package list has been updated"
 }

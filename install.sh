@@ -66,10 +66,28 @@ xdg-mime default dev.zed.Zed.desktop text/plain
 xdg-mime default brave-browser.desktop x-scheme-handler/http
 xdg-mime default brave-browser.desktop x-scheme-handler/https
 
-# Setup timeshift\
+# Setup timeshift
 sudo systemctl daemon-reload
 sudo systemctl enable timeshift-hourly.timer
 
+# NEED TO TEST THIS. GETTING A BIT RISKY WITH THESE COMMANDS
+root_uuid=$(lsblk -no UUID $(findmnt -n -o SOURCE / | cut -d'[' -f1))
+
+sudo cat > /etc/timeshift/timeshift.json << 'EOF'
+{
+    "backup_device_uuid" : "$root_uuid",
+    "do_first_run" : "false",
+    "btrfs_mode" : "true",
+    "include_btrfs_home_for_backup" : "true",
+    "include_btrfs_home_for_restore" : "true",
+    "schedule_weekly" : "false",
+    "count_weekly" : "0",
+    "date_format" : "%Y-%m-%d %H:%M:%S",
+    "exclude" : [],
+    "exclude-apps" : []
+}
+EOF
+
 # Configure GTK dark theme for root apps
 
-echo "Installation complete. Please restart your device."
+echo "Installation complete. Please reboot your device"
