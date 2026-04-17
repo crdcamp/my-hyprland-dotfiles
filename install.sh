@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-# NEED TO FIGURE OUT HOW TO ACCEPT ALL PROMPTS DURING INSTALL
 
 # Ensure we're in the home folder
 cd ~/
+
+# Configure system clock to sync with network's
 
 # Install git
 sudo pacman -S git
@@ -19,13 +20,17 @@ cd ~/
 # Create quick access folders for Nautilus
 mkdir -p ~/{Code,Documents,Notes}
 
+# Install all packages
+yay -S --needed --noconfirm - < packages.txt
+
+# Change shell to zsh
+chsh -s /usr/bin/zsh
+
 # CREATE FRESH PACKAGES.TXT FILE BEFORE DOING THIS
 # Install all dependencies by reading packages.txt
 
 # Delete auto generated configs
 rm -rf ~/.config
-
-# Change to zsh from bash
 
 # Clone Hyprland configuration files and copy them (we'll stick with manual deletion for now)
 git clone https://github.com/crdcamp/my-hyprland-dotfiles.git
@@ -57,9 +62,11 @@ org.freedesktop.impl.portal.FileChooser=shana
 EOF
 
 # Configure Nautilus to use Zed Editor
-
-# Setup synced clock (I forget how to do this)
-
-# Create symlinks to xdg for git tracking
+xdg-mime default dev.zed.Zed.desktop text/plain
 
 # Setup timeshift
+
+# Configure GTK dark theme for root apps
+
+# Enjoy!
+echo "Installation complete. Please reboot your device."

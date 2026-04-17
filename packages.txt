@@ -20,6 +20,7 @@ audit
 autoconf
 automake
 avahi
+ayatana-ido
 base
 base-devel
 bash
@@ -196,6 +197,8 @@ libasyncns
 libatasmart
 libatomic
 libavc1394
+libayatana-appindicator
+libayatana-indicator
 libb2
 libblockdev
 libblockdev-crypto
@@ -220,6 +223,7 @@ libcolord
 libcue
 libcups
 libcupsfilters
+libcurl-gnutls
 libdaemon
 libdatrie
 libdbusmenu-glib
@@ -543,6 +547,7 @@ spdlog
 speex
 speexdsp
 spirv-tools
+spotify
 sqlite
 sratom
 srt
@@ -629,4 +634,6 @@ zix
 zlib
 zlib-ng
 zram-generator
+zsh
+zsh-completions
 zstd
