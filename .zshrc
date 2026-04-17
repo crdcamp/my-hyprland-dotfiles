@@ -20,7 +20,7 @@ setopt CORRECT
 update-system() {
   sudo timeshift --create --comments "Before system update" &&
   yay -Syu &&
-  pacman -Qq > ~/.dotfiles/packages.txt && echo "Update complete. Your package list has been updated"
+  pacman -Qq > ~/.dotfiles/packages.txt && echo "Your package list has been updated"
 }
 
 # Created by `pipx` on 2026-02-07 02:01:55
