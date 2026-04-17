@@ -73,7 +73,7 @@ sudo systemctl enable timeshift-hourly.timer
 # NEED TO TEST THIS. GETTING A BIT RISKY WITH THESE COMMANDS
 root_uuid=$(findmnt -n -o UUID /)
 
-sudo cat > /etc/timeshift/timeshift.json << EOF
+sudo tee /etc/timeshift/timeshift.json > /dev/null << EOF
 {
     "backup_device_uuid" : "$root_uuid",
     "do_first_run" : "false",
