@@ -1,0 +1,69 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "scroll_sensitivity": 2.0,
+  "title_bar": {
+    "show_user_menu": false,
+    "show_menus": false,
+    "show_sign_in": false,
+  },
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "ollama",
+      "model": "qwen2.5-coder:latest",
+    },
+    "default_model": {
+      "provider": "ollama",
+      "model": "qwen2.5:14b",
+    },
+    "model_parameters": [],
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "extend_comment_on_newline": false,
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)",
+  },
+  "base_keymap": "VSCode",
+  "ui_font_size": 16,
+  "buffer_font_size": 14.0,
+  "theme": {
+    "mode": "system",
+    "light": "Matugen Dark",
+    "dark": "Matugen Light",
+  },
+  "languages": {
+    "Python": {
+      "format_on_save": "off",
+      "code_actions_on_format": {
+        "source.organizeImports.ruff": false,
+      },
+    },
+  },
+  "jupyter": {
+    "enabled": true,
+    "kernel_selections": {
+      "python": "conda-env",
+    },
+  },
+  "auto_install_extensions": {
+    "codebook": true,
+    "markdown-oxide": true,
+    "make": true,
+    "html": true,
+    "toml": true,
+    "sql": true,
+    "xml": true,
+  },
+}
+}

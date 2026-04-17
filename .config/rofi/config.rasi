@@ -1,0 +1,39 @@
+@import "colors.rasi"
+
+* {
+    font: "Liberation Sans 13";
+}
+
+configuration {
+    timeout {
+        delay:  0;
+        action: "kb-cancel";
+    }
+    filebrowser {
+        sorting-method:    "name";
+        directories-first: true;
+    }
+}
+
+entry {
+    placeholder: "";
+}
+
+window {
+    border-radius: 10px;
+}
+
+mainbox {
+    padding: 10px;
+}
+
+inputbar {
+    border: 3px;
+    border-radius: 5px;
+}
+
+listview {
+    dynamic: true;
+    fixed-height: false;
+    lines: 20;
+}

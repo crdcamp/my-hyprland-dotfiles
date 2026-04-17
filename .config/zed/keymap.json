@@ -1,0 +1,21 @@
+[
+  {
+    "bindings": {
+      "alt-shift-u": "editor::ConvertToUpperCase",
+      "alt-shift-l": "editor::ConvertToLowerCase",
+    },
+  },
+  {
+    "context": "((Editor && jupyter) && !ContextEditor)",
+    "bindings": {
+      "ctrl-enter": "repl::Run",
+      "ctrl-shift-l": "repl::ClearOutputs",
+    },
+  },
+  {
+    "context": "((Editor && jupyter) && !ContextEditor)",
+    "bindings": {
+      "ctrl-shift-enter": null,
+    },
+  },
+]

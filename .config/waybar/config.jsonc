@@ -1,0 +1,53 @@
+{
+  "position": "top",
+  "layer": "top",
+  "height": 39,
+  "reload_style_on_change": true,
+  "modules-left": ["hyprland/window"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["memory", "network", "battery", "clock"],
+  "hyprland/window": {
+    "swap-icon-label": false,
+    "max-length": 50,
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {},
+    "persistent-workspaces": {
+      "*": [1],
+    },
+  },
+  "memory": {
+    "format": "{}% ",
+  },
+  "network": {
+    "format-wifi": "{signalStrength}%  ",
+    "format-ethernet": "",
+    "format-disconnected": "",
+  },
+  "battery": {
+    "interval": 30,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20,
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% 󰂄",
+    "format-plugged": "{capacity}% 󰂄 ",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["󰁻", "󰁼", "󰁾", "󰂀", "󰂂", "󰁹"],
+  },
+  "clock": {
+    "format": "{:%a, %b %d, %H:%M%p}",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "~/.config/waybar/dropdown_menu.xml",
+    "menu-actions": {
+      "shutdown": "shutdown",
+      "reboot": "reboot",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibernate",
+    },
+  },
+}

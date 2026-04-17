@@ -1,0 +1,8 @@
+# Font Customization
+font_size           12
+font_family         LiterationMono Nerd Font
+
+# Window Border
+window_margin_width 6
+
+include current-theme.conf
