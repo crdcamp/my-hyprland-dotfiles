@@ -26,9 +26,6 @@ yay -S --needed --noconfirm - < packages.txt
 # Change shell to zsh
 chsh -s /usr/bin/zsh
 
-# CREATE FRESH PACKAGES.TXT FILE BEFORE DOING THIS
-# Install all dependencies by reading packages.txt
-
 # Delete auto generated configs
 rm -rf ~/.config
 
@@ -68,5 +65,5 @@ xdg-mime default dev.zed.Zed.desktop text/plain
 
 # Configure GTK dark theme for root apps
 
-# Enjoy!
-echo "Installation complete. Please reboot your device."
+
+echo "Installation complete. Please restart your device."
