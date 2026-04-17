@@ -1,5 +1,5 @@
-open_file = "Gtk"
-save_file = "Gtk"
+open_file = "Gnome"
+save_file = "Gnome"
 
 [tips]
-open_file_when_folder = "Gtk"
+open_file_when_folder = "Gnome"
