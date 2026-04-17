@@ -29,13 +29,13 @@ chsh -s /usr/bin/zsh
 # Delete auto generated configs
 rm -rf ~/.config
 
-# Clone Hyprland configuration files and copy them (we'll stick with manual deletion for now)
+# Clone Hyprland configuration files and copy them
 git clone https://github.com/crdcamp/my-hyprland-dotfiles.git
 mkdir .dotfiles
 # We'll change this to the `mv` command later
 cp -r ~/my-hyprland-dotfiles ~/.dotfiles
 
-# GNU Stow
+# Setup GNU Stow
 stow --dir=~/.dotfiles --target=~/
 
 # Create `xdg-desktop-portal` and `xdg-desktop-portal-shana` directories
@@ -59,18 +59,14 @@ default=hyprland;gtk
 org.freedesktop.impl.portal.FileChooser=shana
 EOF
 
-# Configure Nautilus to use Zed Editor
+# xdg-mime configuration
 xdg-mime default dev.zed.Zed.desktop text/plain
-
-# Setup brave for xdg-mime
 xdg-mime default brave-browser.desktop x-scheme-handler/http
 xdg-mime default brave-browser.desktop x-scheme-handler/https
 
 # Setup timeshift
 sudo systemctl daemon-reload
 sudo systemctl enable timeshift-hourly.timer
-
-# NEED TO TEST THIS. GETTING A BIT RISKY WITH THESE COMMANDS
 root_uuid=$(findmnt -n -o UUID /)
 sudo mkdir -p /etc/timeshift
 sudo tee /etc/timeshift/timeshift.json << EOF
@@ -80,8 +76,19 @@ sudo tee /etc/timeshift/timeshift.json << EOF
     "btrfs_mode" : "true",
     "include_btrfs_home_for_backup" : "true",
     "include_btrfs_home_for_restore" : "true",
-    "schedule_weekly" : "false",
+    "stop_cron_emails": "true",
+    "schedule_monthly": "true",
+    "schedule_weekly": "false",
+    "schedule_daily": "false",
+    "schedule_hourly": "false",
+    "schedule_boot": "false",
+    "count_monthly": "10",
     "count_weekly" : "0",
+    "count_daily": "0",
+    "count_hourly": "0",
+    "count_boot": "0",
+    "snapshot_size": "0",
+    "snapshot_count": "0",
     "date_format" : "%Y-%m-%d %H:%M:%S",
     "exclude" : [],
     "exclude-apps" : []
@@ -90,4 +97,4 @@ EOF
 
 # Configure GTK dark theme for root apps
 
-echo "Installation complete. Welcome to Aptus. Please reboot your device before continuing"
+echo "Installation complete. Welcome to Aptus. Please reboot your device before continuing."

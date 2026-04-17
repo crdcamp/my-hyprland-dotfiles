@@ -9,6 +9,7 @@ I'm about 65% of the way done with these configuration files. The remaining requ
 * Create [rofi](https://github.com/davatorium/rofi) menus for Network, Bluetooth, and Audio Output
 * Finish up [Waybar](https://github.com/alexays/waybar) (mostly complete - just needs a little love)
 * Configure [swaync](https://github.com/ErikReider/SwayNotificationCenter) notification daemon
+* Configure [Hyprlock](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/)
 
 I'll also add a boot screen with a logo when these are done, but above are the final requirements for this system to be fully functional.
 
