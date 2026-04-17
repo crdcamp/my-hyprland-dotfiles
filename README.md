@@ -33,6 +33,10 @@ chmod +x install.sh
 * Configure [Git](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
 * Set up [SSH for GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
 
+In the unlikely instance someone actually tries these configurations out, the keybindings can be found in:
+
+`~/.dotfiles/.config/hypr/keyBindings.conf`
+
 # Updating
 
 I've also included a custom alias for updates. It creates a snapshot before updating, does a system-wide upgrade, and updates the `packages.txt` list. You can run it with the following command:
