@@ -1,6 +1,7 @@
-cd
+cd ~
+
 git clone https://github.com/crdcamp/my-hyprland-dotfiles.git
 mkdir .dotfiles
-cp -r ~/my-hyprland-dotfiles ~/.dotfiles
-cd ~/.dotfiles
-stow .
+mv -r ~/my-hyprland-dotfiles ~/.dotfiles
+
+stow --dir=~/.dotfiles --target=~/
