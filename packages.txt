@@ -574,6 +574,7 @@ tpm2-tss
 tslib
 ttf-carlito
 ttf-dejavu
+ttf-jetbrains-mono-nerd
 ttf-liberation
 tzdata
 uchardet
