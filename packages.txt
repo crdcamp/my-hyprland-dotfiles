@@ -24,6 +24,7 @@ ayatana-ido
 base
 base-devel
 bash
+bc
 binutils
 bison
 bluez
@@ -614,6 +615,7 @@ xcb-util-keysyms
 xcb-util-renderutil
 xcb-util-wm
 xdg-desktop-portal
+xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-shana
 xdg-desktop-portal-shana-debug
