@@ -2,6 +2,10 @@
 
 - [x] SUPER + SHIFT + {hjkl} to move windows
 
+# General
+
+- [ ] Find out if there's some way to have animations to match the window name for rofi to apply them to all rofi windows
+
 # Rofi
 
 - [ ] Grid view for wallpaper menu
@@ -10,10 +14,9 @@
 
 # Waybar
 
-If you choose to not do the sliders, just do this:
-- [ ] Add percent for volume
-- [ ] Add percent for brightness 
-
-Not sure if these are necessary when we have percent values
-- [ ] Add volume slider to top right
-- [ ] Add brightness slider to top right
+- [ ] Move workspaces to the left of active workspace (in its own box)
+- [ ] Move time to center
+- [ ] Add percent for volume to the right
+- [ ] Add percent for brightness to the right
+- [ ] Add rofi menus as "on-click" for relevant display info
+- [ ] Add highlight for currently active workspace
