@@ -5,6 +5,8 @@
 # General
 
 - [ ] Find out if there's some way to have animations to match the window name for rofi to apply them to all rofi windows
+- [ ] Install font's for other languages
+- [ ] Screen shot functionality
 
 # Rofi
 

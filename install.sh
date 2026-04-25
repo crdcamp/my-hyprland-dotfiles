@@ -96,6 +96,8 @@ sudo tee /etc/timeshift/timeshift.json << EOF
 }
 EOF
 
+# Use `chmod +x` on all relevant .sh files
+
 # Configure GTK dark theme for root apps
 
 echo "Installation complete. Welcome to Aptus. Please reboot your device before continuing."
