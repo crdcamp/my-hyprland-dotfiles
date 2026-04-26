@@ -1,10 +1,7 @@
-# Keybindings
-
-- [x] SUPER + SHIFT + {hjkl} to move windows
-- [x] Resize windows with arrow keys
-
 # General
 
+- [ ] Fix Spotify window rule
+- [ ] Timer for turning off screen and locking (after Hyprlock is done)
 - [ ] Find out if there's some way to have animations to match the window name for rofi to apply them to all rofi windows
 - [ ] Install font's for other languages
 - [ ] Screen shot functionality
@@ -12,13 +9,21 @@
 - [ ] In all `.sh` files, correct `~/` to `${HOME}` 
 - [ ] Keyboard light timer
 - [ ] Resize window for float windows
-- [ ] Alt-Tab functionality
 - [ ] Shadow for float windows
 - [ ] Can't drag to resize float windows when they're under waybar
 - [ ] Display All keybindings in rofi menu (MOD + M)
 
+# Keybindings
+
+- [x] SUPER + SHIFT + {hjkl} to move windows
+- [x] Resize windows with arrow keys
+- [ ] Resize active float window to a default size
+- [ ] Keybinding for spotify web player (app barely works)
+- [ ] Fix mute button so volume unmutes when the audio up key is pressed
+- [ ] Alt-Tab functionality
+
 # Install script
-- [ ] 
+- [ ] Setting iwd as backend for NetworkManager. [Link](https://wiki.debian.org/NetworkManager/iwd)
 
 # Appearance
 - [ ] Fix cursor size changing in slectron apps like Steam and Spotify
@@ -64,7 +69,7 @@
   - [ ] Screen sharing
   - [ ] Screen shots
   - [ ] External monitors
-  - [ ] Spotify: Think you're missing some software to have it work fully
+  - [ ] Spotify: Think you're missing some software to have it work fully. Visit [this page](https://wiki.archlinux.org/title/Spotify) as a good starting point
 - [ ] Create logo for Aptus
 - [ ] Use logo in boot screen
 - [ ] Have computer load into Hyprland right at the start
