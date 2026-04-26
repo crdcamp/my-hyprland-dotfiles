@@ -9,6 +9,7 @@
 - [ ] Screen shot functionality
 - [ ] Fill half of screen with key binding
 - [ ] Change size of active window with key bindings (SUPER + arrow keys)
+- [ ] In all `.sh` files, correct `~/` to `${HOME}` 
 
 # Rofi
 
