@@ -18,7 +18,7 @@ makepkg -si
 cd ~/
 
 # Create quick access folders for Nautilus
-mkdir -p ~/{Code,Documents,Notes}
+mkdir -p ~/{Desktop,Code,Documents,Notes}
 
 # Install all packages
 yay -S --needed --noconfirm - < packages.txt
