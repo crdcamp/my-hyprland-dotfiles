@@ -10,6 +10,10 @@
 - [ ] Screen shot functionality
 - [ ] Fill half of screen with key binding
 - [ ] In all `.sh` files, correct `~/` to `${HOME}` 
+- [ ] Keyboard light timer
+- [ ] Resize window for float windows
+- [ ] Alt-Tab functionality
+- [ ] Shadow for float windows
 
 # Rofi
 
