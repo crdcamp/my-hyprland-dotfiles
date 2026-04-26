@@ -19,7 +19,7 @@
 - [x] Resize windows with arrow keys
 - [ ] Resize active float window to a default size
 - [ ] Keybinding for spotify web player (app barely works)
-- [ ] Bind for github
+- [ ] Bind for github.com
 - [ ] Fix mute button so volume unmutes when the audio up key is pressed
 - [ ] Alt-Tab functionality
 
@@ -28,9 +28,10 @@
 
 # Appearance
 - [ ] Fix cursor size changing in slectron apps like Steam and Spotify
+- [ ] Ensure QT theming is working correctly
 
 # Interaction
-  - [ ] Scrolling that flows (I'm not sure what the exact word for this is
+  - [ ] Scrolling that flows (I'm not sure what the exact word for this is)
 
 # Rofi
 
