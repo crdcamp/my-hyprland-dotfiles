@@ -4,14 +4,7 @@ This is an [Arch Linux](https://archlinux.org/)/[Hyprland](https://hypr.land/) c
 
 "Aptus" is Latin for "Suitable, adapted, fit, proper, or ready for a particular purpose or situation". So... that's what this system is named after.
 
-I'm about 65% of the way done with these configuration files. The remaining requirements are as follows:
-* Finish theming and configuring [rofi](https://github.com/davatorium/rofi)
-* Create [rofi](https://github.com/davatorium/rofi) menus for Network, Bluetooth, and Audio Output
-* Finish up [Waybar](https://github.com/alexays/waybar) (mostly complete - just needs a little love)
-* Configure [swaync](https://github.com/ErikReider/SwayNotificationCenter) notification daemon
-* Configure [Hyprlock](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/)
-
-I'll also add a boot screen with a logo when these are done, but above are the final requirements for this system to be fully functional.
+This operating system still has a ways to go but the automated theme changing, functionality, and baseline visuals are relatively complete.
 
 # A couple warnings before installing
 * This install script assumes you have **absolutely nothing** on your computer. It **will** delete your .config folder and has absolutely no error handling.
