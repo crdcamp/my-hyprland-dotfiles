@@ -12,6 +12,7 @@ configuration {
     filebrowser {
         sorting-method:    "name";
         directories-first: true;
+        show-hidden: true;
     }
 }
 
