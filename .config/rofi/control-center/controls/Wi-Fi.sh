@@ -22,10 +22,7 @@ get_networks_list() {
         awk '{print $1}'
 }
 
-get_networks_list
-echo
-
-echo "$networks_list" | grep "Network name"
+rofi -dmenu get_networks_list
 # Won't work till we get a list output
 #"$networks_list" | rofi -dmenu
 # We'll have to pipe the above results into rofi now
