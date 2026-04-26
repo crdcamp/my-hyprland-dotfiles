@@ -13,7 +13,6 @@
 
 # Rofi
 
-
 - [ ] Make config file specifically for `open-controls.sh`:
   - [ ] Change the display name to `Control Center:`
   - [ ] Remove the current directory, remove the `..` (the first result)
