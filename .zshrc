@@ -17,11 +17,8 @@ PS1='%F{blue}%~%f %F{green}❯ %f'
 setopt CORRECT
 
 # Aliases
-update-system() {
-  sudo timeshift --create --comments "Before system update" &&
-  yay -Syu &&
-  pacman -Qq > ~/.dotfiles/packages.txt && echo "Your package list has been updated" &&
-}
+alias name='update-system'
+alias update-system='~/.dotfiles/.config/rofi/control-center/controls/System/Update.sh'
 
 # Created by `pipx` on 2026-02-07 02:01:55
 export PATH="$PATH:/home/crdcamp/.local/bin"
