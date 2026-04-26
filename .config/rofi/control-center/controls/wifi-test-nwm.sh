@@ -2,7 +2,7 @@
 
 # Code borrowed from: https://github.com/P3rf/rofi-network-manager/blob/master/src/ronema
 
-# Check if network manager is running and start it if it's not
+# Function to check if network manager is running and start it if it's not
 start_nm() {
     if [ "$(systemctl is-active NetworkManager.service)" != "inactive" ];
         then
@@ -11,11 +11,19 @@ start_nm() {
     fi
     sudo systemctl start NetworkManager.service
     sudo systemctl enable NetworkManager.service
-    echo 'Started/Enables NetworkManager.service'
+    echo 'Started/Enabled NetworkManager.service'
 }
 
-# Function to shut down NetworkManager
-
+# Function to stop NetworkManager
+stop_nm() {
+    if [ "$(systemctl is-active NetworkManager.service)" = "inactive" ];
+        then
+        echo 'NetworkManager is already inactive'
+        return
+    fi
+    sudo systemctl stop NetworkManager.service
+    echo 'Stopped NetworkManager.service'
+}
 
 # Function for wireless interface
 
