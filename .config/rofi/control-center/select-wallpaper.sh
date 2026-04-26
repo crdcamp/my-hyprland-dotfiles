@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# This whole thing could be cleaned up...
 
 # ADD KEYSTROKES FOR EXIT PARAMETERS, SUCH AS
 # CHANGING WINDOWS CREATING AN EXIT CALL
