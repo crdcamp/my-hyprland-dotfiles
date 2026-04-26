@@ -19,6 +19,8 @@
   - [ ] Remove the (1/5) to the right of the input menu
   - [ ] Remove extensions from file names
   - [ ] Add icons for eachg menu
+  - [ ] Customize the order menus are presented
+  - [ ] Consider making is a horizontal view if you can replace the names with icons
 - [ ] Grid view for wallpaper menu
 - [ ] Finish customizing color scheme
 - [ ] Apply Hyprland animations to custom scripts
