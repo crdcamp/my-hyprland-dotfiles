@@ -64,6 +64,7 @@
   - [ ] Screen sharing
   - [ ] Screen shots
   - [ ] External monitors
+  - [ ] Spotify: Think you're missing some software to have it work fully
 - [ ] Create logo for Aptus
 - [ ] Use logo in boot screen
 - [ ] Have computer load into Hyprland right at the start
