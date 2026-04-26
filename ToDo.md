@@ -1,6 +1,7 @@
 # Keybindings
 
 - [x] SUPER + SHIFT + {hjkl} to move windows
+- [x] Resize windows with arrow keys
 
 # General
 
@@ -8,14 +9,14 @@
 - [ ] Install font's for other languages
 - [ ] Screen shot functionality
 - [ ] Fill half of screen with key binding
-- [ ] Change size of active window with key bindings (SUPER + arrow keys)
 - [ ] In all `.sh` files, correct `~/` to `${HOME}` 
 
 # Rofi
 
+- [ ] Make config file specifically for `open-controls.sh`
 - [ ] Grid view for wallpaper menu
 - [ ] Finish customizing color scheme
-- [ ] Apply Hyprland animations to custom scripts: `.dotfiles/.config/hypr/scripts/select_wallpaper.sh`
+- [ ] Apply Hyprland animations to custom scripts
 
 # Waybar
 
