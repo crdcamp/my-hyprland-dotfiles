@@ -101,3 +101,7 @@ EOF
 # Configure GTK dark theme for root apps
 
 echo "Installation complete. Welcome to Aptus. Please reboot your device before continuing."
+
+
+# FOR LATER: Check if NetworkManager is using iwd backend:
+#nmcli -f GENERAL.STATE,WIFI-PROPERTIES.WEP device show wlan0
