@@ -5,6 +5,7 @@
 }
 
 configuration {
+    modi: "filebrowser";
     timeout {
         delay:  0;
         action: "kb-cancel";
