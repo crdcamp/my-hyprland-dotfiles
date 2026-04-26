@@ -20,7 +20,6 @@ audit
 autoconf
 automake
 avahi
-ayatana-ido
 base
 base-devel
 bash
@@ -120,6 +119,7 @@ gobject-introspection-runtime
 gperftools
 gpgme
 gpgmepp
+gpm
 gpsd
 granite7
 graphene
@@ -201,8 +201,6 @@ libasyncns
 libatasmart
 libatomic
 libavc1394
-libayatana-appindicator
-libayatana-indicator
 libb2
 libblockdev
 libblockdev-crypto
@@ -227,7 +225,6 @@ libcolord
 libcue
 libcups
 libcupsfilters
-libcurl-gnutls
 libdaemon
 libdatrie
 libdbusmenu-glib
@@ -285,13 +282,16 @@ libliftoff
 liblsan
 libmakepkg-dropins
 libmd
+libmm-glib
 libmnl
 libmodplug
 libmpc
 libmpdclient
 libmysofa
 libnautilus-extension
+libndp
 libnetfilter_conntrack
+libnewt
 libnfnetlink
 libnftnl
 libnghttp2
@@ -299,6 +299,7 @@ libnghttp3
 libngtcp2
 libnice
 libnl
+libnm
 libnotify
 libnsl
 libnvme
@@ -342,6 +343,7 @@ libstemmer
 libsysprof-capture
 libtasn1
 libtatsu
+libteam
 libthai
 libtheora
 libtiff
@@ -432,6 +434,7 @@ meson
 micro
 mkinitcpio
 mkinitcpio-busybox
+mobile-broadband-provider-info
 mpdecimal
 mpfr
 mpg123
@@ -440,6 +443,7 @@ muparser
 nautilus
 ncurses
 nettle
+networkmanager
 nftables
 ninja
 node-gyp
@@ -468,7 +472,9 @@ pangomm
 parted
 patch
 pciutils
+pcre
 pcre2
+pcsclite
 perl
 perl-error
 perl-mailtools
@@ -542,6 +548,7 @@ shaderc
 shadow
 shared-mime-info
 simdjson
+slang
 snappy
 sndio
 sof-firmware
@@ -551,7 +558,6 @@ spdlog
 speex
 speexdsp
 spirv-tools
-spotify
 sqlite
 sratom
 srt
@@ -601,6 +607,7 @@ webrtc-audio-processing-1
 which
 wireplumber
 wl-clipboard
+wpa_supplicant
 x264
 x265
 xapp
