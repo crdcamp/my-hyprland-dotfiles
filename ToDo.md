@@ -13,7 +13,13 @@
 
 # Rofi
 
-- [ ] Make config file specifically for `open-controls.sh`
+
+- [ ] Make config file specifically for `open-controls.sh`:
+  - [ ] Change the display name to `Control Center:`
+  - [ ] Remove the current directory, remove the `..` (the first result)
+  - [ ] Remove the (1/5) to the right of the input menu
+  - [ ] Remove extensions from file names
+  - [ ] Add icons for eachg menu
 - [ ] Grid view for wallpaper menu
 - [ ] Finish customizing color scheme
 - [ ] Apply Hyprland animations to custom scripts
