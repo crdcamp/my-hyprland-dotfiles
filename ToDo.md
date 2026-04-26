@@ -7,6 +7,8 @@
 - [ ] Find out if there's some way to have animations to match the window name for rofi to apply them to all rofi windows
 - [ ] Install font's for other languages
 - [ ] Screen shot functionality
+- [ ] Fill half of screen with key binding
+- [ ] Change size of active window with key bindings (SUPER + arrow keys)
 
 # Rofi
 
