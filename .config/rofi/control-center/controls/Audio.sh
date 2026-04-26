@@ -6,8 +6,8 @@ IFS=$'\n'
 # Make script independent on particular implementation of send client.
 if command -v notify-send > /dev/null 2>&1; then
     SEND="notify-send"
-elif command -v dunstify > /dev/null 2>&1; then
-    SEND="dunstify"
+elif command -v swaync > /dev/null 2>&1; then
+    SEND="swaync"
 else
     SEND="/bin/false"
 fi
