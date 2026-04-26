@@ -14,9 +14,21 @@
 - [ ] Resize window for float windows
 - [ ] Alt-Tab functionality
 - [ ] Shadow for float windows
+- [ ] Can't drag to resize float windows when they're under waybar
+- [ ] Display All keybindings in rofi menu (MOD + M)
+
+# Install script
+- [ ] 
+
+# Appearance
+- [ ] Fix cursor size changing in slectron apps like Steam and Spotify
+
+# Interaction
+- [ ] Scrolling that flows (I'm not sure what the exact word for this is)
 
 # Rofi
 
+- [ ] Need to make System directory accessible
 - [ ] Make config file specifically for `open-controls.sh`:
   - [ ] Change the display name to `Control Center:`
   - [ ] Remove the current directory, remove the `..` (the first result)
@@ -33,7 +45,25 @@
 
 - [ ] Move workspaces to the left of active workspace (in its own box)
 - [ ] Move time to center
+- [ ] Audio control
 - [ ] Add percent for volume to the right
 - [ ] Add percent for brightness to the right
 - [ ] Add rofi menus as "on-click" for relevant display info
 - [ ] Add highlight for currently active workspace
+
+# Hyprlock
+- [ ] Download and configure Hyprlock (probably gonna add some new requirements here)
+
+# Super Advanced
+- [ ] Save exact position and size of all windows when shutting down (put a command before the exit keybinding)
+- [ ] Show waybar when screen is completely filled and you drag the mouse to the top of the screen
+- [ ] Have nautilus close whenever you open a document with it
+
+# Final Requirements
+- [ ] Ensure the following things are functional:
+  - [ ] Screen sharing
+  - [ ] Screen shots
+  - [ ] External monitors
+- [ ] Create logo for Aptus
+- [ ] Use logo in boot screen
+- [ ] Have computer load into Hyprland right at the start
