@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Check if network manager is running
+# Code borrowed from: https://github.com/P3rf/rofi-network-manager/blob/master/src/ronema
 
 # If not, start/enable NM
 start_enable_nm() {
@@ -13,3 +13,12 @@ start_enable_nm() {
 stop_nm() {
     sudo systemctl stop NetworkManager.service
 }
+
+# Check if network manager is running
+nm_status() {
+    if [ "$(systemctl is-active NetworkManager.service)" = "active" ]; then
+}
+
+# Function for wireless interface
+
+# Function for wired interface
