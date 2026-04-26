@@ -19,6 +19,7 @@
 - [x] Resize windows with arrow keys
 - [ ] Resize active float window to a default size
 - [ ] Keybinding for spotify web player (app barely works)
+- [ ] Bind for github
 - [ ] Fix mute button so volume unmutes when the audio up key is pressed
 - [ ] Alt-Tab functionality
 
@@ -29,7 +30,7 @@
 - [ ] Fix cursor size changing in slectron apps like Steam and Spotify
 
 # Interaction
-- [ ] Scrolling that flows (I'm not sure what the exact word for this is)
+  - [ ] Scrolling that flows (I'm not sure what the exact word for this is
 
 # Rofi
 
@@ -63,6 +64,7 @@
 - [ ] Save exact position and size of all windows when shutting down (put a command before the exit keybinding)
 - [ ] Show waybar when screen is completely filled and you drag the mouse to the top of the screen
 - [ ] Have nautilus close whenever you open a document with it
+- [ ] Functionality to hide float windows in the currently active workspace
 
 # Final Requirements
 - [ ] Ensure the following things are functional:

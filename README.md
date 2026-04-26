@@ -4,7 +4,7 @@ This is an [Arch Linux](https://archlinux.org/)/[Hyprland](https://hypr.land/) c
 
 "Aptus" is Latin for "Suitable, adapted, fit, proper, or ready for a particular purpose or situation". So... that's what this system is named after.
 
-This operating system still has a ways to go but the automated theme changing, functionality, and baseline visuals are relatively complete.
+This operating system still has a ways to go but the automated theme changing, general functionality, and baseline visuals are relatively complete. The dreadful amount of tasks ahead of me can be found in [ToDo.md](https://github.com/crdcamp/my-hyprland-dotfiles/blob/main/ToDo.md).
 
 # A couple warnings before installing
 * This install script assumes you have **absolutely nothing** on your computer. It **will** delete your .config folder and has absolutely no error handling.
