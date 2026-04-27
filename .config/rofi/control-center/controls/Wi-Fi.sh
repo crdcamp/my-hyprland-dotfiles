@@ -1,35 +1,65 @@
 #!/usr/bin/env bash
+# A lot of this code was borrowed from: https://github.com/P3rf/rofi-network-manager/blob/master/src/ronema
+WIRED_INTERFACES=($(nmcli device | awk '$2=="ethernet" {print $1}'))
+WIRELESS_INTERFACES=($(nmcli device | awk '$2=="wifi" {print $1}'))
+WLAN_INT=0
 
-# ADD A CHECK TO SEE IF WIFI IS RUNNING... or however you say that
-# Make sure you're checking the device list correctly
-
-device_list=$(iwctl device list)
-#echo "$device_list"
-
-# Need to ensure we're using the right station when the rest is done
-
-# Get some clean results for the networks
-# DON'T FORGET TO FIND OUT HOW TO REFRESH THIS
-get_networks_list() {
-    iwctl station wlan0 scan
-    iwctl station wlan0 get-networks | \
-        tail -n +5 | \
-        head -n -1 | \
-        sed -e "s:\[1;30m::g" | \
-        sed -e "s:\[0m::g" | \
-        sed -e "s:\*\x1b.*:\*:g" | \
-        sed -e "s:\x1b::g" | \
-        awk '{print $1}'
+check_nm_status() {
+    status="$(systemctl is-active NetworkManager.service)"
+    echo "NETWORKMANAGER STATUS: $status"
+    # Add additional logic for what to do if NetworkManager.service is inactive
 }
 
-rofi -dmenu get_networks_list
-# Won't work till we get a list output
-#"$networks_list" | rofi -dmenu
-# We'll have to pipe the above results into rofi now
+# Check wireless connection
+check_nm_wireless_state() {
+    WIFI_CON_STATE=$(nmcli device status | grep "^${WIRELESS_INTERFACES[WLAN_INT]}." | awk '{print $3}')
+    echo "WI-FI CONNECTION STATE: $WIFI_CON_STATE"
 
-# DON'T FORGET TO STOP STATION SCAN
+    ACTIVE_SSID=$(nmcli device status | grep "^${WIRELESS_INTERFACES[WLAN_INT]}." | awk '{print $4}')
+    echo "ACTIVE SSID: $ACTIVE_SSID"
+}
+
+# Check ethernet connection
+check_nm_ethernet_state() {
+    ETHERNET_CON_STATE=$(nmcli device status | grep "ethernet" | head -1 | awk '{print $3}')
+    if [[ "$ETHERNET_CON_STATE" != "" ]];
+        then
+        ETHERNET_CON_STATE="active"
+        echo "ETHERNET CONNECTION STATE: $ETHERNET_CON_STATE"
+        return
+    fi
+    ETHERNET_CON_STATE="inactive"
+    echo "ETHERNET CONNECTION STATE: $ETHERNET_CON_STATE"
+}
 
 
 
-# Exit iwctl when done
-######################
+
+
+start_nm() {
+    if [[ "$(systemctl is-active NetworkManager.service)" = "active" ]];
+        then
+        echo 'NetworkManager.service is already running'
+        return
+    fi
+    sudo systemctl start NetworkManager.service
+    sudo systemctl enable NetworkManager.service
+    echo 'Started/Enabled NetworkManager.service'
+}
+
+# Stop NetworkManager.service if it's not already inactive
+stop_nm() {
+    if [[ "$(systemctl is-active NetworkManager.service)" = "inactive" ]];
+        then
+        echo 'NetworkManager is already inactive'
+        return
+    fi
+    sudo systemctl stop NetworkManager.service
+    echo 'Stopped NetworkManager.service'
+}
+
+check_nm_status
+check_nm_wireless_state
+check_nm_ethernet_state
+
+# Function for wired interface
