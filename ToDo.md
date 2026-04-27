@@ -1,5 +1,6 @@
 # General
 
+- [ ] Double check that Nautilus is defaulting to Zed
 - [ ] Fix Spotify window rule
 - [ ] Timer for turning off screen and locking (after Hyprlock is done)
 - [ ] Find out if there's some way to have animations to match the window name for rofi to apply them to all rofi windows
@@ -24,7 +25,7 @@
 - [ ] Alt-Tab functionality
 
 # Install script
-- [ ] Setting iwd as backend for NetworkManager. [Link](https://wiki.debian.org/NetworkManager/iwd)
+- [ ] Setting iwd as backend for NetworkManager. [Link](https://wiki.debian.org/NetworkManager/iwd) (this will be easy)
 
 # Appearance
 - [ ] Fix cursor size changing in slectron apps like Steam and Spotify
@@ -66,8 +67,10 @@
 - [ ] Show waybar when screen is completely filled and you drag the mouse to the top of the screen
 - [ ] Have nautilus close whenever you open a document with it
 - [ ] Functionality to hide float windows in the currently active workspace
+- [ ] When moving a window with keybindings, preserve the initial scale of the window
 
 # Final Requirements
+**Note: The more difficult options of these will require creating a tracking system for all windows. That should be your first step before continuing with the window management aspects.**
 - [ ] Ensure the following things are functional:
   - [ ] Screen sharing
   - [ ] Screen shots
