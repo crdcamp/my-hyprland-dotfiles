@@ -37,14 +37,15 @@ toggle_network() {
     check_nm_status > /dev/null
     if [[ "$status" = "active" ]]; then
         sudo systemctl stop NetworkManager.service
-        echo "Wi-Fi: ON"
+        echo "Wi-Fi: OFF"
     else
         sudo systemctl enable NetworkManager.service
         sudo systemctl start NetworkManager.service
-        echo "Wi-Fi: OFF"
+        echo "Wi-Fi: ON"
     fi
 }
 
 check_nm_status
 toggle_network
 check_nm_status
+toggle_network
