@@ -50,3 +50,12 @@ check_nm_ethernet_state() {
 # toggle_network
 # check_nm_status
 # toggle_network
+# We're all good
+
+# Now we want a list of all available Wi-Fi connections to
+# display to the user
+# We'll make this a scrollable menu
+list_wifi_networks() {
+    # Use `nmcli device wifi list` to get a list of wifi networks
+    # Extract the SSID and RATE fields and put those into a list
+}
