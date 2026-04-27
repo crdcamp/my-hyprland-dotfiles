@@ -11,6 +11,19 @@ check_nm_status() {
     # Add additional logic for what to do if NetworkManager.service is inactive
 }
 
+# Toggle Wi-Fi on/off
+toggle_network() {
+    check_nm_status > /dev/null # Mute `check_nm_status` output
+    if [[ "$status" = "active" ]]; then
+        sudo systemctl stop NetworkManager.service
+        echo "Wi-Fi: OFF"
+    else
+        sudo systemctl enable NetworkManager.service
+        sudo systemctl start NetworkManager.service
+        echo "Wi-Fi: ON"
+    fi
+}
+
 # Check wireless connection
 check_nm_wireless_state() {
     WIFI_CON_STATE=$(nmcli device status | grep "^${WIRELESS_INTERFACES[WLAN_INT]}." | awk '{print $3}')
@@ -32,20 +45,8 @@ check_nm_ethernet_state() {
     echo "ETHERNET CONNECTION STATE: $ETHERNET_CON_STATE"
 }
 
-# Toggle Wi-Fi on/off
-toggle_network() {
-    check_nm_status > /dev/null
-    if [[ "$status" = "active" ]]; then
-        sudo systemctl stop NetworkManager.service
-        echo "Wi-Fi: OFF"
-    else
-        sudo systemctl enable NetworkManager.service
-        sudo systemctl start NetworkManager.service
-        echo "Wi-Fi: ON"
-    fi
-}
-
-check_nm_status
-toggle_network
-check_nm_status
-toggle_network
+# Check if the above functions are working properly
+# check_nm_status
+# toggle_network
+# check_nm_status
+# toggle_network
