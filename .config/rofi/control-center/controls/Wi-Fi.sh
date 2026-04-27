@@ -4,6 +4,7 @@ WIRED_INTERFACES=($(nmcli device | awk '$2=="ethernet" {print $1}'))
 WIRELESS_INTERFACES=($(nmcli device | awk '$2=="wifi" {print $1}'))
 WLAN_INT=0
 
+# Check if NetworkManager.service is running
 check_nm_status() {
     status="$(systemctl is-active NetworkManager.service)"
     echo "NETWORKMANAGER STATUS: $status"
@@ -22,8 +23,7 @@ check_nm_wireless_state() {
 # Check ethernet connection
 check_nm_ethernet_state() {
     ETHERNET_CON_STATE=$(nmcli device status | grep "ethernet" | head -1 | awk '{print $3}')
-    if [[ "$ETHERNET_CON_STATE" != "" ]];
-        then
+    if [[ "$ETHERNET_CON_STATE" != "" ]]; then
         ETHERNET_CON_STATE="active"
         echo "ETHERNET CONNECTION STATE: $ETHERNET_CON_STATE"
         return
@@ -32,34 +32,19 @@ check_nm_ethernet_state() {
     echo "ETHERNET CONNECTION STATE: $ETHERNET_CON_STATE"
 }
 
-
-
-
-
-start_nm() {
-    if [[ "$(systemctl is-active NetworkManager.service)" = "active" ]];
-        then
-        echo 'NetworkManager.service is already running'
-        return
+# Toggle Wi-Fi on/off
+toggle_network() {
+    check_nm_status > /dev/null
+    if [[ "$status" = "active" ]]; then
+        sudo systemctl stop NetworkManager.service
+        echo "Wi-Fi: ON"
+    else
+        sudo systemctl enable NetworkManager.service
+        sudo systemctl start NetworkManager.service
+        echo "Wi-Fi: OFF"
     fi
-    sudo systemctl start NetworkManager.service
-    sudo systemctl enable NetworkManager.service
-    echo 'Started/Enabled NetworkManager.service'
-}
-
-# Stop NetworkManager.service if it's not already inactive
-stop_nm() {
-    if [[ "$(systemctl is-active NetworkManager.service)" = "inactive" ]];
-        then
-        echo 'NetworkManager is already inactive'
-        return
-    fi
-    sudo systemctl stop NetworkManager.service
-    echo 'Stopped NetworkManager.service'
 }
 
 check_nm_status
-check_nm_wireless_state
-check_nm_ethernet_state
-
-# Function for wired interface
+toggle_network
+check_nm_status
