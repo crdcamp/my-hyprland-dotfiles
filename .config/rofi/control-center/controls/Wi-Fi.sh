@@ -50,12 +50,18 @@ check_nm_ethernet_state() {
 # toggle_network
 # check_nm_status
 # toggle_network
-# We're all good
+# We're all good. Let's continue.
 
 # Now we want a list of all available Wi-Fi connections to
 # display to the user
 # We'll make this a scrollable menu
 list_wifi_networks() {
     # Use `nmcli device wifi list` to get a list of wifi networks
-    # Extract the SSID and RATE fields and put those into a list
+    # Extract the SSID and SIGNAL fields and put those into a list
+    WIFI_NETWORKS=$(nmcli -f SSID,SIGNAL device wifi | sort -nr -k2) # Pretty sure it already sorts by signal, but just in cast. You can probably remove this.
+    echo "$WIFI_NETWORKS"
 }
+
+# Don't forget a "refresh" option for displaying wi-fi
+
+list_wifi_networks
