@@ -56,12 +56,10 @@ check_nm_ethernet_state() {
 # display to the user
 # We'll make this a scrollable menu
 list_wifi_networks() {
-    # Use `nmcli device wifi list` to get a list of wifi networks
-    # Extract the SSID and SIGNAL fields and put those into a list
-    WIFI_NETWORKS=$(nmcli -f SSID,SIGNAL device wifi | sort -nr -k2) # Pretty sure it already sorts by signal, but I'll sort just in case
+    # Extract the SSID and SIGNAL fields and remove headers
+    WIFI_NETWORKS=$(nmcli -f SSID,SIGNAL device wifi | tail -n +2 | sort -nr -k2) # Pretty sure it already sorts by signal, but I'll sort just in case
     echo "$WIFI_NETWORKS"
 }
-
-# Don't forget a "refresh" option for displaying wi-fi
+# Don't forget a "refresh" option for displaying wi-fi (We'll do this much later)
 
 list_wifi_networks
