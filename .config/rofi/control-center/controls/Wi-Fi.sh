@@ -58,7 +58,7 @@ check_nm_ethernet_state() {
 list_wifi_networks() {
     # Use `nmcli device wifi list` to get a list of wifi networks
     # Extract the SSID and SIGNAL fields and put those into a list
-    WIFI_NETWORKS=$(nmcli -f SSID,SIGNAL device wifi | sort -nr -k2) # Pretty sure it already sorts by signal, but just in cast. You can probably remove this.
+    WIFI_NETWORKS=$(nmcli -f SSID,SIGNAL device wifi | sort -nr -k2) # Pretty sure it already sorts by signal, but I'll sort just in case
     echo "$WIFI_NETWORKS"
 }
 
