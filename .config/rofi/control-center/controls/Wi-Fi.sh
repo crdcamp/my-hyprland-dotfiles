@@ -30,15 +30,14 @@ check_nm_ethernet_state() {
 #active_network()
 
 # Toggle Wi-Fi on/off
+# MIGHT RUN INTO AN ISSUE WITH SUDO PERMISSIONS WHEN RUNNING THIS FUNCTION IN ROFI
 toggle_network() {
     check_nm_status > /dev/null # Mute `check_nm_status` output
     if [[ "$status" = "active" ]]; then
         sudo systemctl stop NetworkManager.service
-        echo "Wi-Fi: OFF"
     else
         sudo systemctl enable NetworkManager.service
         sudo systemctl start NetworkManager.service
-        echo "Wi-Fi: ON"
     fi
 }
 
@@ -58,15 +57,15 @@ WHAT WE HAVE SO FAR:
 * A list of wifi networks
 
 SO, WHAT ELSE DO WE NEED?
-* Currently connected network
-* Connect to network option
+* Currently connected network (already done, just needs to be fed into rofi using `check_nm_wireless_state` with ` ACTIVE_SSID`)
+* Connect to network option (an option that then leads to the list of Wi-Fi networks)
 
-BUT, IN THE MEANTIME, LETS JUST OUTPUT WHAT WE
-CURRENTLY HAVE INTO A ROFI MENU
+BUT, IN THE MEANTIME, LETS JUST OUTPUT WHAT WE CURRENTLY HAVE INTO A ROFI MENU
 
 We want it to be a series of options, not a bunch of info overwhelming the user:
 * Currently active network (could be displayed in the search tab)
 * Wi-Fi toggle on/off
 * Option to open a list of available networks (need to adjust network list function to not include the current network)
 * Option to switch to ethernet (this will be annoying to test witht the current laptop. Not a huge priority)
+* I think thats about it. We can add additional stuff for advanced configuration when the baseline is complete
 '
