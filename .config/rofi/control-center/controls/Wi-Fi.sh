@@ -39,16 +39,6 @@ check_nm_ethernet_state() {
     ETHERNET_CON_STATE="inactive"
 }
 
-# Check if the above functions are working properly
-# check_nm_status
-# toggle_network
-# check_nm_status
-# toggle_network
-# We're all good. Let's continue.
-
-# Now we want a list of all available Wi-Fi connections to
-# display to the user
-# We'll make this a scrollable menu
 list_wifi_networks() {
     # Extract the SSID and SIGNAL fields and remove headers
     WIFI_NETWORKS=$(nmcli -f SSID,SIGNAL device wifi | tail -n +2 | sort -nr -k2) # Pretty sure it already sorts by signal, but I'll sort just in case
