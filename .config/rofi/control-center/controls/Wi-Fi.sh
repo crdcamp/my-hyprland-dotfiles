@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+
+# rofi -show wifi -modi "wifi:$HOME/.dotfiles/.config/rofi/control-center/controls/Wi-Fi.sh"
 # A lot of this code was borrowed from: https://github.com/P3rf/rofi-network-manager/blob/master/src/ronema
 WIRED_INTERFACES=($(nmcli device | awk '$2=="ethernet" {print $1}'))
 WIRELESS_INTERFACES=($(nmcli device | awk '$2=="wifi" {print $1}'))
@@ -44,7 +46,6 @@ toggle_network() {
 list_wifi_networks() {
     # Extract the SSID and SIGNAL fields and remove headers
     WIFI_NETWORKS=$(nmcli -f SSID,SIGNAL device wifi | tail -n +2 | sort -nr -k2) # Pretty sure it already sorts by signal, but I'll sort just in case
-    echo "$WIFI_NETWORKS"
 }
 # Don't forget a "refresh" option for displaying wi-fi (We'll do this much later)
 
@@ -69,3 +70,7 @@ We want it to be a series of options, not a bunch of info overwhelming the user:
 * Option to switch to ethernet (this will be annoying to test witht the current laptop. Not a huge priority)
 * I think thats about it. We can add additional stuff for advanced configuration when the baseline is complete
 '
+
+# rofi -show wifi -modi "wifi:/home/crdcamp/.dotfiles/.config/rofi/control-center/controls/Wi-Fi.sh"
+check_nm_wireless_state
+echo -en "\0prompt\x1fWi-Fi\nNetwork: ${ACTIVE_SSID}"
