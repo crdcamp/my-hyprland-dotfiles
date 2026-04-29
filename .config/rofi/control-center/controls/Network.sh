@@ -72,6 +72,7 @@ We want it to be a series of options, not a bunch of info overwhelming the user:
 * I think thats about it. We can add additional stuff for advanced configuration when the baseline is complete
 '
 
-# rofi -show wifi -modi "wifi:~/.dotfiles/.config/rofi/control-center/controls/Netowrk.sh"
+# rofi -show wifi -modi "wifi:~/.dotfiles/.config/rofi/control-center/controls/Network.sh"
 check_nm_wireless_state
-echo -en "\0prompt\x1fConnected to ${ACTIVE_SSID}\nTurn Off\nList Available Networks"
+# Don't forget to input a different prompt if no networks are connected
+echo -en "\0prompt\x1fConnected to ${ACTIVE_SSID}\nTurn Off\nAvailable Networks\nSwitch to Ethernet"
