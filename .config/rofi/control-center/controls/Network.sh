@@ -50,6 +50,8 @@ list_wifi_networks() {
 }
 # Don't forget a "refresh" option for displaying wi-fi (We'll do this much later)
 
+#check_network_speed
+
 : '
 WHAT WE HAVE SO FAR:
 * Check network status (for NM in general)
@@ -77,30 +79,39 @@ We want it to be a series of options, not a bunch of info overwhelming the user:
 # Don't forget to input a different prompt if no networks are connected
 #echo -en "\0prompt\x1fConnected to ${ACTIVE_SSID}\nTurn Off\nAvailable Networks\nSwitch to Ethernet"
 
+# NEED TO GET RID OF MOST OF THE ETHERNET STUFF
+# All we really need is the ability to switch to ethernet if an ethernet cord is connected
+toggle_wifi() {
+    if [[ "$WIFI_CON_STATE"="disconnected" ]]; then
+        nmcli radio wifi on
+    else
+        nmcli radio wifi off
+}
+
 check_nm_wireless_state
 
 if [[ "$ROFI_RETV" -eq 0 ]]; then
-    # Initial call: print the menu
-    echo -en "\0prompt\x1fConnected to ${ACTIVE_SSID:-None}\n"
-    echo "Turn Off" # Rewrite toggle_network for this
-    echo "Show Available Networks"
-    echo "Check Network Speed"
-    echo "Switch to Ethernet"
+    # Need to make an if statement for if there's no network
+    echo -en "\0prompt\x1fConnected to ${ACTIVE_SSID}\n"
+    echo "Turn Wi-Fi Off" # Rewrite toggle_network for this
+    echo "Show available networks"
+    echo "Check network speed"
+    echo "Switch to ethernet"
 
 elif [[ "$ROFI_RETV" -eq 1 ]]; then
     case "$1" in
         "Turn Off")
             nmcli radio wifi off
             ;;
-        "Show Available Networks")
+        "Show available networks")
             list_wifi_networks
             echo "$WIFI_NETWORKS"
             exit 0
             ;;
-        "Check Network Speed")
+        "Check network speed")
             # Check network speed logic here
             ;;
-        "Switch to Ethernet")
+        "Switch to ethernet")
             # ethernet logic here
             ;;
         *)
