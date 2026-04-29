@@ -54,7 +54,7 @@ if [[ "$ROFI_RETV" -eq 0 ]]; then
     # Need to make an if statement for if there's no network
     echo -en "\0prompt\x1fConnected to ${ACTIVE_SSID}\n"
     # Need an if statement here to display wifi on/off depending on the current case
-    echo "Turn Wi-Fi off"
+    echo "Turn off"
     echo "Show available networks"
     echo "Check network speed"
     echo "Switch to ethernet"
@@ -82,5 +82,3 @@ elif [[ "$ROFI_RETV" -eq 1 ]]; then
             ;;
     esac
 fi
-
-echo $WIFI_CON_STATE
