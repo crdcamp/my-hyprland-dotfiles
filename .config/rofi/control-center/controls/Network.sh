@@ -46,7 +46,7 @@ toggle_network() {
 
 list_wifi_networks() {
     # Extract the SSID and SIGNAL fields and remove headers
-    WIFI_NETWORKS=$(nmcli -f SSID,SIGNAL device wifi | tail -n +2 | sort -nr -k2) # Pretty sure it already sorts by signal, but I'll sort just in case
+    WIFI_NETWORKS=$(nmcli -f SSID device wifi | tail -n +2 | sort -nr -k2) # Pretty sure it already sorts by signal, but I'll sort just in case
 }
 # Don't forget a "refresh" option for displaying wi-fi (We'll do this much later)
 
@@ -83,7 +83,7 @@ if [[ "$ROFI_RETV" -eq 0 ]]; then
     # Initial call: print the menu
     echo -en "\0prompt\x1fConnected to ${ACTIVE_SSID:-None}\n"
     echo "Turn Off" # Rewrite toggle_network for this
-    echo "Available Networks"
+    echo "Show Available Networks"
     echo "Check Network Speed"
     echo "Switch to Ethernet"
 
@@ -92,7 +92,7 @@ elif [[ "$ROFI_RETV" -eq 1 ]]; then
         "Turn Off")
             nmcli radio wifi off
             ;;
-        "Available Networks")
+        "Show Available Networks")
             list_wifi_networks
             echo "$WIFI_NETWORKS"
             exit 0
