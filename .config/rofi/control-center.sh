@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$HOME/.dotfiles/.config/rofi/control-menus/Network.sh"
+source "$HOME/.dotfiles/.config/rofi/control-center-menus/network.sh"
 # Run command:
 # rofi -show controls -modi "controls:$HOME/.dotfiles/.config/rofi/control-center.sh"
 if [[ "$ROFI_RETV" -eq 0 ]]; then

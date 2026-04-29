@@ -18,6 +18,7 @@ check_nm_status() {
 check_nm_wireless_state() {
     WIFI_CON_STATE=$(nmcli device status | grep "^${WIRELESS_INTERFACES[WLAN_INT]}." | awk '{print $3}')
     ACTIVE_SSID=$(nmcli device status | grep "^${WIRELESS_INTERFACES[WLAN_INT]}." | awk '{print $4}')
+    echo $ACTIVE_SSID
 }
 
 # Check ethernet connection
