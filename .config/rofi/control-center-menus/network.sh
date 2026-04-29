@@ -50,36 +50,18 @@ list_wifi_networks() {
 #echo -en "\0prompt\x1fConnected to ${ACTIVE_SSID}\nTurn Off\nAvailable Networks\nSwitch to Ethernet"
 # All we really need is the ability to switch to ethernet if an ethernet cord is connected
 
-check_nm_wireless_state
-if [[ "$ROFI_RETV" -eq 0 ]]; then
-    # Need to make an if statement for if there's no network
-    echo -en "\0prompt\x1fConnected to ${ACTIVE_SSID}\n"
-    # Need an if statement here to display wifi on/off depending on the current case
-    echo "Turn off"
+show_network_page() {
+    echo -en "\0data\x1fnetwork\n"
+    echo -en "\0prompt\x1fNetwork\n"
+    echo "Turn off Wi-Fi"
     echo "Show available networks"
-    echo "Check network speed"
-    echo "Switch to ethernet"
+    # etc
+}
 
-elif [[ "$ROFI_RETV" -eq 1 ]]; then
+handle_network_selection() {
     case "$1" in
-        "Turn Off")
+        "Turn off Wi-Fi")
             nmcli radio wifi off
             ;;
-        "Show available networks")
-            list_wifi_networks
-            echo "$WIFI_NETWORKS"
-            exit 0
-            ;;
-        "Check network speed")
-            # Check network speed logic here
-            ;;
-        "Switch to ethernet")
-            # ethernet logic here
-            ;;
-        *)
-            # Anything else = user picked a network from the list
-            SSID=$(echo "$1" | awk '{print $1}')
-            nmcli device wifi connect "$SSID" &
-            ;;
     esac
-fi
+}
