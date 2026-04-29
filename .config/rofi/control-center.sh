@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+source "$HOME/.dotfiles/.config/rofi/control-menus/Network.sh"
 # Run command:
 # rofi -show controls -modi "controls:$HOME/.dotfiles/.config/rofi/control-center.sh"
 if [[ "$ROFI_RETV" -eq 0 ]]; then
@@ -14,17 +14,9 @@ if [[ "$ROFI_RETV" -eq 0 ]]; then
 elif [[ "$ROFI_RETV" -eq 1 ]]; then
     case "$1" in
         "Network")
-            rofi -show wifi -modi "wifi:~/.dotfiles/.config/rofi/control-center/controls/Network.sh"
-            ;;
-        "Bluetooth")
-            rofi -show bt -modi "bt:~/.dotfiles/.config/rofi/control-center/controls/Bluetooth.sh"
-            ;;
-        "Audio")
-            rofi -show audio -modi "audio:~/.dotfiles/.config/rofi/control-center/controls/Audio.sh"
-            ;;
-        "System")
-            rofi -show system -modi "system:~/.dotfiles/.config/rofi/control-center/controls/System.sh"
-            ;;
+        ;;
         *)
     esac
 fi
+
+check_nm_wireless_state
