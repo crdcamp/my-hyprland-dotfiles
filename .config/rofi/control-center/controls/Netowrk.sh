@@ -33,6 +33,7 @@ check_nm_ethernet_state() {
 
 # Toggle Wi-Fi on/off
 # MIGHT RUN INTO AN ISSUE WITH SUDO PERMISSIONS WHEN RUNNING THIS FUNCTION IN ROFI
+# In fact, this will probably have to be rewritten to account for this
 toggle_network() {
     check_nm_status > /dev/null # Mute `check_nm_status` output
     if [[ "$status" = "active" ]]; then
@@ -71,6 +72,6 @@ We want it to be a series of options, not a bunch of info overwhelming the user:
 * I think thats about it. We can add additional stuff for advanced configuration when the baseline is complete
 '
 
-# rofi -show wifi -modi "wifi:/home/crdcamp/.dotfiles/.config/rofi/control-center/controls/Wi-Fi.sh"
+# rofi -show wifi -modi "wifi:~/.dotfiles/.config/rofi/control-center/controls/Netowrk.sh"
 check_nm_wireless_state
-echo -en "\0prompt\x1fWi-Fi\nNetwork: ${ACTIVE_SSID}"
+echo -en "\0prompt\x1fConnected to ${ACTIVE_SSID}\nTurn Off\nList Available Networks"
