@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+# Run command:
+# rofi -show controls -modi "controls:$HOME/.dotfiles/.config/rofi/control-center.sh"
 if [[ "$ROFI_RETV" -eq 0 ]]; then
     # Need to make an if statement for if there's no network
     echo -en "\0prompt\x1fConnected to ${ACTIVE_SSID}\n"
