@@ -73,6 +73,40 @@ We want it to be a series of options, not a bunch of info overwhelming the user:
 '
 
 # rofi -show wifi -modi "wifi:~/.dotfiles/.config/rofi/control-center/controls/Network.sh"
-check_nm_wireless_state
+#check_nm_wireless_state
 # Don't forget to input a different prompt if no networks are connected
-echo -en "\0prompt\x1fConnected to ${ACTIVE_SSID}\nTurn Off\nAvailable Networks\nSwitch to Ethernet"
+#echo -en "\0prompt\x1fConnected to ${ACTIVE_SSID}\nTurn Off\nAvailable Networks\nSwitch to Ethernet"
+
+check_nm_wireless_state
+
+if [[ "$ROFI_RETV" -eq 0 ]]; then
+    # Initial call: print the menu
+    echo -en "\0prompt\x1fConnected to ${ACTIVE_SSID:-None}\n"
+    echo "Turn Off" # Rewrite toggle_network for this
+    echo "Available Networks"
+    echo "Check Network Speed"
+    echo "Switch to Ethernet"
+
+elif [[ "$ROFI_RETV" -eq 1 ]]; then
+    case "$1" in
+        "Turn Off")
+            nmcli radio wifi off
+            ;;
+        "Available Networks")
+            list_wifi_networks
+            echo "$WIFI_NETWORKS"
+            exit 0
+            ;;
+        "Check Network Speed")
+            # Check network speed logic here
+            ;;
+        "Switch to Ethernet")
+            # ethernet logic here
+            ;;
+        *)
+            # Anything else = user picked a network from the list
+            SSID=$(echo "$1" | awk '{print $1}')
+            nmcli device wifi connect "$SSID" &
+            ;;
+    esac
+fi
