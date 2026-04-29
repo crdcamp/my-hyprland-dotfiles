@@ -18,7 +18,12 @@ check_nm_status() {
 check_nm_wireless_state() {
     WIFI_CON_STATE=$(nmcli device status | grep "^${WIRELESS_INTERFACES[WLAN_INT]}." | awk '{print $3}')
     ACTIVE_SSID=$(nmcli device status | grep "^${WIRELESS_INTERFACES[WLAN_INT]}." | awk '{print $4}')
-    echo $ACTIVE_SSID
+
+    if [[ "$WIFI_CON_STATE" == "disconnected" ]]; then
+        WIFI_TOGGLE_DISPLAY="Turn on Wi-Fi"
+    else
+        WIFI_TOGGLE_DISPLAY="Turn off Wi-Fi"
+    fi
 }
 
 # Check ethernet connection
@@ -50,18 +55,12 @@ list_wifi_networks() {
 #echo -en "\0prompt\x1fConnected to ${ACTIVE_SSID}\nTurn Off\nAvailable Networks\nSwitch to Ethernet"
 # All we really need is the ability to switch to ethernet if an ethernet cord is connected
 
+check_nm_wireless_state
+
 show_network_page() {
     echo -en "\0data\x1fnetwork\n"
     echo -en "\0prompt\x1fNetwork\n"
-    echo "Turn off Wi-Fi"
+    echo "$WIFI_TOGGLE_DISPLAY"
     echo "Show available networks"
     # etc
-}
-
-handle_network_selection() {
-    case "$1" in
-        "Turn off Wi-Fi")
-            nmcli radio wifi off
-            ;;
-    esac
 }
