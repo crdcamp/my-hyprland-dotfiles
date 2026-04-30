@@ -1,5 +1,6 @@
 # General
 
+- [ ] Sync system clock with network
 - [ ] Double check that Nautilus is defaulting to Zed
 - [ ] Fix Spotify window rule
 - [ ] Timer for turning off screen and locking (after Hyprlock is done)
