@@ -1,6 +1,7 @@
 # General
 
 - [ ] Sync system clock with network
+- [ ] Add the functionality that enables you to partially scroll through workspaces
 - [ ] Double check that Nautilus is defaulting to Zed
 - [ ] Fix Spotify window rule
 - [ ] Timer for turning off screen and locking (after Hyprlock is done)
@@ -65,6 +66,7 @@
 
 # Super Advanced
 - [ ] Save exact position and size of all windows when shutting down (put a command before the exit keybinding)
+- [ ] Fill half screen functionality. Just `fullscreen` dispatcher, only instead it's `halfscreen`
 - [ ] Show waybar when screen is completely filled and you drag the mouse to the top of the screen
 - [ ] Have nautilus close whenever you open a document with it
 - [ ] Functionality to hide float windows in the currently active workspace
