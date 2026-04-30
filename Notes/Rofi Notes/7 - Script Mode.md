@@ -14,7 +14,7 @@ rofi -show fd -modes "fd:file_browser.sh"
 
 The name should be unique.
 
-The `fb` is just the name you're giving to the custom mode. It's an arbitrary label. So, `fb:file_browser.sh` means "create a mode called `fd`, backed by the script `file_browser.sh`.
+The `fb` is just the name you're giving to the custom mode. It's an arbitrary label. So, `fb:file_browser.sh` means "create a mode called `fd`, backed by the script `file_browser.sh`".
 
 # API
 
@@ -31,3 +31,5 @@ fi
 echo "reload"
 echo "quit"
 ```
+
+See bash's [Special Parameters](https://tiswww.case.edu/php/chet/bash/bashref.html#Special-Parameters) for more details on `$@`. In short, `$@` expands to the positional parameters, starting from one. It's a shell scripting guard against empty/unset variables breaking string comparisons.
