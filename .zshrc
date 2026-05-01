@@ -18,7 +18,7 @@ setopt CORRECT
 
 # Aliases
 alias name='update-system'
-alias update-system='~/.dotfiles/.config/rofi/control-center/controls/System/Update.sh'
+alias update-system='~/.dotfiles/.config/rofi/update.sh'
 
 # Created by `pipx` on 2026-02-07 02:01:55
 export PATH="$PATH:/home/crdcamp/.local/bin"

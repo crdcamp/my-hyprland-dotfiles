@@ -60,7 +60,7 @@ Environment get set when script sets **data** option in header.
 
 # Passing Mode Options
 
-Extra options, like setting the prompt, can be set by the sctips. Extra options are lines that start with a NULL character (\0) followed by a key, separator (\x1f) and value.
+Extra options, like setting the prompt, can be set by the scripts. Extra options are lines that start with a NULL character (\0) followed by a key, separator (\x1f) and value.
 
 For example, to set the prompt:
 

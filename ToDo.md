@@ -1,5 +1,6 @@
 # General
 
+- [ ] Add resize window to float key
 - [ ] Sync system clock with network
 - [ ] Add the functionality that enables you to partially scroll through workspaces
 - [ ] Double check that Nautilus is defaulting to Zed
