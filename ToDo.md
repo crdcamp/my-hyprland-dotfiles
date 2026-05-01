@@ -29,6 +29,7 @@
 
 # Install script
 - [ ] Setting iwd as backend for NetworkManager. [Link](https://wiki.debian.org/NetworkManager/iwd) (this will be easy)
+- [ ] Set eww config directory
 
 # Appearance
 - [ ] Fix cursor size changing in slectron apps like Steam and Spotify
