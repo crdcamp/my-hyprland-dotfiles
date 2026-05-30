@@ -12,18 +12,18 @@ fi
 
 case "$1" in
     "Network")
-        coproc ( sleep 0.1 && kitty --title impala -e impala )
+        coproc ( kitty --title impala -e impala )
         ;;
     "Bluetooth")
-        coproc ( sleep 0.1 && kitty --title bluetui -e bluetui )
+        coproc ( kitty --title bluetui -e bluetui )
         ;;
     "Audio")
-        coproc ( sleep 0.1 && kitty --title wiremix -e wiremix )
+        coproc ( kitty --title wiremix -e wiremix )
         ;;
     "System")
-        coproc ( gnome-system-monitor > /dev/null 2>&1 ) # TBD
+        coproc ( gnome-system-monitor > /dev/null 2>&1 ) # Need to install the TUI for this one still
         ;;
     "Update")
-        coproc ( kitty -e "$HOME/.dotfiles/.config/rofi/update.sh" )
+        coproc ( kitty --title update-system -e "$HOME/.dotfiles/.config/rofi/update.sh" )
         ;;
 esac
