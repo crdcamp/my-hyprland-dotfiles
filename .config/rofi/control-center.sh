@@ -6,6 +6,7 @@ if [ "$ROFI_RETV" = "0" ]; then
     echo "Bluetooth"
     echo "Audio"
     echo "System"
+    echo "Update"
     exit 0
 fi
 
@@ -21,5 +22,8 @@ case "$1" in
         ;;
     "System")
         coproc ( gnome-system-monitor > /dev/null 2>&1 ) # TBD
+        ;;
+    "Update")
+        coproc ( kitty -e "$HOME/.dotfiles/.config/rofi/update.sh" )
         ;;
 esac
