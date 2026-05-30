@@ -456,6 +456,7 @@ ninja
 node-gyp
 nodejs
 nodejs-nopt
+noto-fonts-emoji
 npm
 npth
 nspr
