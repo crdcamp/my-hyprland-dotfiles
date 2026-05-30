@@ -12,13 +12,13 @@ fi
 
 case "$1" in
     "Network")
-    coproc ( kitty -e impala )
+        coproc ( sleep 0.1 && kitty --title impala -e impala )
         ;;
     "Bluetooth")
-        coproc ( kitty -e bluetui )
+        coproc ( sleep 0.1 && kitty --title bluetui -e bluetui )
         ;;
     "Audio")
-        coproc ( kitty -e wiremix )
+        coproc ( sleep 0.1 && kitty --title wiremix -e wiremix )
         ;;
     "System")
         coproc ( gnome-system-monitor > /dev/null 2>&1 ) # TBD
