@@ -2,12 +2,10 @@
 
 - [ ] Add resize window to float key
 - [ ] Sync system clock with network
-- [ ] Add the functionality that enables you to partially scroll through workspaces
-- [ ] Double check that Nautilus is defaulting to Zed
-- [ ] Fix Spotify window rule
-- [ ] Timer for turning off screen and locking (after Hyprlock is done)
-- [ ] Find out if there's some way to have animations to match the window name for rofi to apply them to all rofi windows
 - [ ] Install font's for other languages
+- [ ] Timer for turning off screen and locking (after Hyprlock is done)
+- [ ] Fix Spotify window rule
+- [ ] Find out if there's some way to have animations to match the window name for rofi to apply them to all rofi windows
 - [ ] Screen shot functionality
 - [ ] Fill half of screen with key binding
 - [ ] In all `.sh` files, correct `~/` to `${HOME}` 

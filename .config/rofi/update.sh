@@ -4,3 +4,4 @@
 sudo timeshift --create --comments "Before system update"
 yay -Syu
 pacman -Qq > ~/.dotfiles/packages.txt && echo "Your package list has been updated"
+sleep 5

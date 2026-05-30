@@ -683,6 +683,7 @@ wayland
 wayland-protocols
 webrtc-audio-processing-1
 which
+wiremix
 wireplumber
 wl-clipboard
 wpa_supplicant
