@@ -120,6 +120,7 @@ gnu-free-fonts
 gnulib-l10n
 gnupg
 gnutls
+go
 gobject-introspection
 gobject-introspection-runtime
 gperftools

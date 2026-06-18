@@ -22,3 +22,5 @@ alias update-system='~/.dotfiles/.config/rofi/update.sh'
 
 # Created by `pipx` on 2026-02-07 02:01:55
 export PATH="$PATH:/home/crdcamp/.local/bin"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"

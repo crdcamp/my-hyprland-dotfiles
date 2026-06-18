@@ -21,7 +21,7 @@ case "$1" in
         coproc ( kitty --title wiremix -e wiremix )
         ;;
     "System")
-        coproc ( gnome-system-monitor > /dev/null 2>&1 ) # Need to install the TUI for this one still
+        coproc ( kitty --title btop -e  btop)
         ;;
     "Update")
         coproc ( kitty --title update-system -e "$HOME/.dotfiles/.config/rofi/update.sh" )
