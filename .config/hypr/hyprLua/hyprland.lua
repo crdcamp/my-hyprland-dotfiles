@@ -44,5 +44,30 @@ hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 --INPUT--
 ---------
 hl.config({
-    input
+    input = {
+        -- Keyboard
+        kb_layout     = "us",
+        kb_variant    = "",
+        kb_model      = "",
+        kb_options    = "",
+        kb_rules      = "",
+
+        -- Mouse
+        follow_mouse  = 1,
+        sensitivity   = 0,
+        accel_profile = flat,
+
+        -- Touchpad
+        touchpad      = {
+            natural_scroll = true,
+            scroll_factor = 0.3,
+        }
+    }
 })
+
+--Touchpad sensitivity
+hl.device {
+    name = "dll0945:00-27c6:01e0-touchpad",
+    sensitivity = 0.6,
+    accel_profile = flat,
+}
