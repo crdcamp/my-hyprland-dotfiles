@@ -22,11 +22,13 @@ hl.config({
     general = {
         gaps_in = 2,
         gaps_out = 3,
-
         border_size = 2,
-
         col = {
-            active_border = { colors = {} }
-        }
+            active_border = { colors.inverse_primary },
+            inactive_border = { colors.inverse_on_surface },
+        },
+        resize_on_border = false,
+        allow_tearing = false,
+        layout = "dwindle",
     }
 })
