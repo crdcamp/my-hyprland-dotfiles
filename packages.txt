@@ -721,8 +721,10 @@ xdg-desktop-portal-shana
 xdg-desktop-portal-shana-debug
 xdg-user-dirs
 xdg-utils
+xf86-input-libinput
 xkeyboard-config
 xorg-fonts-encodings
+xorg-server
 xorg-server-common
 xorg-setxkbmap
 xorg-xkbcomp
