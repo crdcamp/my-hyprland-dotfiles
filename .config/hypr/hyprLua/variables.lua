@@ -13,7 +13,7 @@ local variables = {
     },
     entertainment = {
         music = "brave https://open.spotify.com/",
-        games = "steam"
+        games = "steam",
     },
 }
 
