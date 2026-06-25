@@ -1,8 +1,11 @@
-require("monitors")
-local vars = require("variables")
+require("monitors")               -- done
+local vars = require("variables") --done
 require("lookAndFeel")
 require("keyBindings")
 require("windowRules")
+
+-- DON'T FORGET TO ADD THE GENERAL STUFF FROM THE OG
+-- VERSION OF THIS FILE
 
 ---------------
 --- AUTOSTART--
@@ -36,7 +39,7 @@ hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 
--- Qt variables
+-- Qt Variables
 hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 
@@ -65,9 +68,16 @@ hl.config({
     }
 })
 
---Touchpad sensitivity
-hl.device {
+--Touchpad Sensitivity
+hl.device({
     name = "dll0945:00-27c6:01e0-touchpad",
     sensitivity = 0.6,
-    accel_profile = flat,
-}
+    accel_profile = "flat",
+})
+
+-- Workspace Gesture
+hl.gesture({
+    fingers = 3,
+    direction = "horizontal",
+    action = "workspace"
+})
