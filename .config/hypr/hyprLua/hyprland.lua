@@ -1,6 +1,6 @@
-require("monitors")               -- done
+require("monitors")               --done
 local vars = require("variables") --done
-require("lookAndFeel")
+require("lookAndFeel")            --done
 require("keyBindings")
 require("windowRules")
 
@@ -54,18 +54,22 @@ hl.config({
         kb_model      = "",
         kb_options    = "",
         kb_rules      = "",
-
         -- Mouse
         follow_mouse  = 1,
         sensitivity   = 0,
         accel_profile = flat,
-
         -- Touchpad
         touchpad      = {
             natural_scroll = true,
             scroll_factor = 0.3,
-        }
-    }
+        },
+        -- No Category
+        misc          = {
+            focus_on_activate       = true,
+            force_default_wallpaper = 0,
+            disable_hyprland_logo   = false,
+        },
+    },
 })
 
 --Touchpad Sensitivity
