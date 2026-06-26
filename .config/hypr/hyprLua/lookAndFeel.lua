@@ -17,7 +17,7 @@ hl.layer_rule({
     ignore_alpha = 0,
 })
 
--- Window Distancing/Border Colors
+-- Windows and Borders
 hl.config({
     general = {
         gaps_in = 2,
@@ -30,5 +30,6 @@ hl.config({
         resize_on_border = false,
         allow_tearing = false,
         layout = "dwindle",
-    }
+    },
+
 })
