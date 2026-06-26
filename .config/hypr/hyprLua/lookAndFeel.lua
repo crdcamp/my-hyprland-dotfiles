@@ -31,5 +31,25 @@ hl.config({
         allow_tearing = false,
         layout = "dwindle",
     },
+    -- Window Settings
+    decoration {
+        rounding = 10,
+        rounding_power = 2,
+        active_opacity = 0.92,
+        inactive_opacity = 0.87,
+        shadow = { enabled = false },
+        blur = {
+            enabled = true,
+            size = 3,
+            passes = 2,
+            xray = false,
+            vibrancy = 0.1696,
+        }
+    },
+    animations {
+        enabled = true,
 
+    }
 })
+
+-- Curves and Animations
