@@ -1,15 +1,11 @@
-require("monitors")               --done
-local vars = require("variables") --done
-require("lookAndFeel")            --done
+require("monitors")    --done
+require("lookAndFeel") --done
 require("keyBindings")
 require("windowRules")
-
--- DON'T FORGET TO ADD THE GENERAL STUFF FROM THE OG
--- VERSION OF THIS FILE
-
 ---------------
 --- AUTOSTART--
 ---------------
+
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 hl.on("hyprland.start", function()
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
