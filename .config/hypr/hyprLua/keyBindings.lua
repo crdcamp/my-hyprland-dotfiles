@@ -22,6 +22,11 @@ hl.bind(mainMod .. " + SHIFT + L", hl.disp.move({ direction = "right" }))
 hl.bind(mainMod .. " + SHIFT + K", hl.disp.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + J", hl.disp.move({ direction = "down" }))
 
+-- Resize Windows
+hl.bind(mainMod .. " left", hl.disp.resize({ -35, 0, activewindow }, { repeating = true }))
+hl.bind(mainMod .. " right", hl.disp.resize({ 35, 0, activewindow }, { repeating = true }))
+hl.bind(mainMod .. " up", hl.disp.resize({ 0, 35, activewindow }, { repeating = true }))
+hl.bind(mainMod .. " down", hl.disp.resize({ 0, -35, activewindow }, { repeating = true }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
