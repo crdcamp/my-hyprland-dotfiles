@@ -1,21 +1,33 @@
 [
   {
     "bindings": {
-      "alt-shift-u": "editor::ConvertToUpperCase",
-      "alt-shift-l": "editor::ConvertToLowerCase",
+      // Toggle side panels
+      "ctrl-b": "workspace::ToggleLeftDock",
+      "ctrl-r": "workspace::ToggleRightDock",
+
+      // "Go to next" symbols (essentially skips to the next function)
+      "ctrl-ctrl-j": "editor::GoToNextSymbol",
+      "ctrl-ctrl-k": "editor::GoToPreviousSymbol",
     },
   },
   {
+    // Jupyter REPL hot keys
     "context": "((Editor && jupyter) && !ContextEditor)",
     "bindings": {
       "ctrl-enter": "repl::Run",
       "ctrl-shift-l": "repl::ClearOutputs",
-    },
-  },
-  {
-    "context": "((Editor && jupyter) && !ContextEditor)",
-    "bindings": {
       "ctrl-shift-enter": null,
     },
   },
+  {
+    "context": "Pane",
+    "unbind": {
+      "ctrl-shift-g": "search::SelectPreviousMatch"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-shift-g": "git_panel::Toggle"
+    }
+  }
 ]
