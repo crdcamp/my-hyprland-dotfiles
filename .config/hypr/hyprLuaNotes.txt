@@ -1,0 +1,1 @@
+Note that`hyprlock` and `hyprpaper` were not converted. You'll have to do this manually.
